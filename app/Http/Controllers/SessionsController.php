@@ -12,7 +12,7 @@ class SessionsController extends Controller
         $this->middleware('guest', [
             'only' => ['create']
         ]);
-
+    }
     //登录
     public function create()
     {
