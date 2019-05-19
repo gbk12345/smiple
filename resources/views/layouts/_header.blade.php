@@ -4,7 +4,7 @@
         <ul class="navbar-nav justify-content-end">
             @if (Auth::check())
                 <li class="nav-item"><a class="nav-link" href="#">用户列表</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">编辑资料</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{route('users.edit',Auth::user())}}">编辑资料</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{route('users.show',Auth::user())}}">个人中心</a></li>
                 <li class="nav-item">
                     <a class="" id="" href="#">
