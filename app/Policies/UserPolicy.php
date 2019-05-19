@@ -20,8 +20,14 @@ class UserPolicy
     }
 
     //只有自己才能编辑自己
-    public function update(User $currentUser,User $user )
+    public function update(User $currentUser, User $user)
     {
         return $currentUser->id === $user->id;
+    }
+
+    //只有管理员才有删除功能
+    public function delete(User $currentUser, User $user)
+    {
+        return $currentUser->is_admin && $currentUser->id !== $user->id;
     }
 }
